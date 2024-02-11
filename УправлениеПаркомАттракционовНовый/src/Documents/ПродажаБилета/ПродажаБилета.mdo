@@ -27,26 +27,11 @@
   <numberAllowedLength>Variable</numberAllowedLength>
   <checkUnique>true</checkUnique>
   <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ПродажаБилета.Form.ФормаДокумента</defaultObjectForm>
   <registerRecords>AccumulationRegister.АктивныеПосещения</registerRecords>
   <registerRecords>AccumulationRegister.Продажи</registerRecords>
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
-  <attributes uuid="ad3e789e-2988-4de9-9869-a48e0184cd2c">
-    <name>Аттракцион</name>
-    <synonym>
-      <key>ru</key>
-      <value>Аттракцион</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.Аттракционы</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
   <attributes uuid="aaa7fcbe-ddef-421b-8969-bc93c2dc7540">
     <name>ДокументСумма</name>
     <synonym>
@@ -68,6 +53,37 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="4901efc6-1529-430a-9f34-1eec05d2a8e4">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ВидНоменклатуры</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ВидНоменклатуры.EnumValue.ПосещениеАттракциона</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="35bd639b-d645-495d-b77f-56f492294b55">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
   <templates uuid="5cb5aced-1ed9-4bad-b1b1-ff45ceb48f8a">
     <name>Билет</name>
   </templates>
@@ -78,7 +94,7 @@
       <types>DocumentRef.ПродажаБилета</types>
     </commandParameterType>
     <parameterUseMode>Multiple</parameterUseMode>
-    <representation>Auto</representation>
+    <representation>Picture</representation>
     <picture xsi:type="core:PictureRef">
       <picture>StdPicture.Print</picture>
     </picture>
